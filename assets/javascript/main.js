@@ -26,27 +26,51 @@
          $("#wind").append(response.wind.speed);
     });  
    
+    function hello(){
+        var today = newDate;
+        var hourNow = today.getHour();
+        var greeting ;
 
 
-    // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyA15Ov9f5jM84BedjQw-ASIeOuJ4qUoh98",
-    authDomain: "myweatherapi-1ee55.firebaseapp.com",
-    databaseURL: "https://myweatherapi-1ee55.firebaseio.com",
-    projectId: "myweatherapi-1ee55",
-    storageBucket: "myweatherapi-1ee55.appspot.com",
-    messagingSenderId: "906555122342"
-  };
-  firebase.initializeApp(config);
+        if(hourNow > 18){
+          greeting = "Good Evening";
+        }
+        else if(hourNow > 12){
+         greeting = "Good Afternoon";
+        }
+        else if (hourNow = 0){
+         greeting = "Good Night";
+        }
+        else{
+        greeting= "Welcome!";
+        }
+      
+      };
+      
+      document.write('<h1>' + greeting " </h1>");
+      $("#todayGreeting").append(hello);
 
-   firebase.database().ref().orderByChild('dateAdded').limitToLast(1).on("child_added", function(snapshot){
-     $("#distinationCity").html(snapshot.val());
-   });
+
+  //   // Initialize Firebase
+  // var config = {
+  //   apiKey: "AIzaSyA15Ov9f5jM84BedjQw-ASIeOuJ4qUoh98",
+  //   authDomain: "myweatherapi-1ee55.firebaseapp.com",
+  //   databaseURL: "https://myweatherapi-1ee55.firebaseio.com",
+  //   projectId: "myweatherapi-1ee55",
+  //   storageBucket: "myweatherapi-1ee55.appspot.com",
+  //   messagingSenderId: "906555122342"
+  // };
+
+  // firebase.initializeApp(config);
+
+  //  firebase.database().ref().orderByChild('dateAdded').limitToLast(1).on("child_added", function(snapshot){
+  //    $("#distinationCity").html(snapshot.val());
+  //  });
 
    // $("#commentForm").validate();
 
    
-    // configration for slid photo's
+    // configration for slide photo's
     var width = 720;
     var animationSpeed = 1000;
     var pause = 3000;
@@ -55,7 +79,6 @@
     var $slider = $('#slider');
     var $slideContainer = $slider.find('.slides');
     var $slides = $slideContainer.find('.slide');
-
     var interval;
 
    // start slidingright to left
@@ -79,9 +102,19 @@
       // slider stops when mouse move to the sliding area
     $slider.on('mouseenter', stopSlider).on('mouseleave', startSlider);
 
-    startslider();
+    startSlider();
  });
 
+ $("#submit").on('click', function(event){
+
+         event.preventDefault();
+       // grabs user input
+        temp_max = $("#informationBoard").val().trim();
+        temp_min= $("#frequencyInput").val().trim();
+        wind_speed = $("#arrivalInput").val().trim();
+        minutesAway = $("#minutesAwayInput").val().trim();
+
+});
 //  var button = select("#submit");
 //  button.mousePressed(todayWeather);
 

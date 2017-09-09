@@ -11,13 +11,20 @@
 	   		<script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
 
 	    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	    	 <meta name="viewport" content="width-device-width, initial-scale=1.0">
 	   		<!-- <img src="Bootcamp-Homework/img/weather.jpg"> -->
 	</head>
 	<body class="bg-info">
-
 		<div class=".container-fluid" >
 			<div class=".jumbotron-fluid " style= " background-color: #3e4444; color: white">
-			  <div id = 'slider'>
+			    
+				<form class="navbar-form navbar-left role="search" style= " background-color: #116644; color: white">
+				  <!-- <div class="form-group">
+				    <input type="text" class="form-control" placeholder="Search">
+				  </div>
+				  <button type="submit" class="btn btn-default">Submit</button> -->
+				</form>
+			  <div id = 'slider' id = "todayGreeting">
 			  	<h1 class= "display1 text-center">Weather App</h1>
 					<p class="lead text-center">Tell us where you want go and I will tell you a weather information</p>
 			  	<ul class="slides">
@@ -48,30 +55,44 @@
 	               		<div class="input-group">
 	               			<input type="text required" class=" form-control" value="Denver">
 	               			<span class="input-group-btn">
-	               				<button class="btn btn-primary" type="button" id = "submit">Submit</button>
+	               				<button class="btn btn-riverse" type="button" id = "submit">Submit</button>
 	               			</span>
 	               		</div>
 	               	</div>
 	            
 
 	         <div class="row addDestination"> 
-			  <div class="col-md-4  m-t-5">
+			  <div class="col-md-3  m-t-5">
 			   <div class= "panel panel-primary" id= "informationBoard">
-			     <div class="panel-heading">Your Up-to-date Weather Information</div>
-			     <!--  <div class="thumbnail m-t-0"> -->
-			         <!-- <img src="..." alt="..."> -->
-			      <!-- <div class="caption"> -->
+			     <div class="panel-heading">Your Up-to-date Weather Information</div> 
+			       <div id = "max_temp">High Temprature </div>
+			   		<div id = "min_temp">Low Temprature </div>
+			   		<div id = "humidity">Humidity </div>
+			   		<div id = "wind_speed">Wind Speed </div>
+			      
 			        <h3 id="temprature">Temprature in &#8451; </h3>
 			        <h3 id="humidity">Humidity: </h3>
 			        <h3 id="wind">Wind Speed: in mph: </h3>
-			       <!--  <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p> -->
+			    
+			      </div>
+			    </div>
+			  <!-- </div> -->
+			 <!--  <div class="row addDestination">  -->
+			  <div class="col-md-3  m-t-5">
+			   <div class= "panel panel-primary" id= "informationBoard">
+			     <div class="panel-heading">Things to do</div>
+			     	<h3 id="">Restourants</h3>
+			        <h3 id="">Parks and recration</h3>
+			        <h3 id="">music and Theaters </h3>
+			     
 			      </div>
 			    </div>
 			  </div>
 			</div>
 	     </div>
-	  </div>      
-   </div> 
+	  </div> 
+	 </div>     
+  
 	        
 	 <footer>
   
